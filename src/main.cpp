@@ -1,8 +1,11 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 int main() {
     auto window = sf::RenderWindow({1920u, 1080u}, "CMake SFML Project");
     window.setFramerateLimit(144);
+
+    std::cout << "Hello world!!" << std::endl;
 
     while (window.isOpen()) {
         for (auto event = sf::Event(); window.pollEvent(event);) {
