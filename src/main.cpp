@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "player.h"
+#include "player/player.h"
 
 
 int main() {
-    auto window = sf::RenderWindow({1920u, 1080u}, "CMake SFML Project");
+    auto window = sf::RenderWindow({1920u, 1080u}, "CMake SFML Project", sf::Style::Fullscreen);
     sf::Color color(80, 0, 0);
     window.setFramerateLimit(144);
 

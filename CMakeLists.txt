@@ -13,9 +13,16 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp src/player.cpp)
-target_link_libraries(main PRIVATE sfml-graphics)
+# Add add_subdirectory
+add_subdirectory(src/player)
+
+
+add_executable(main src/main.cpp)
+
+
+target_link_libraries(main PRIVATE sfml-graphics player)
 target_compile_features(main PRIVATE cxx_std_17)
+
 target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(main PRIVATE ${SFML_SOURCE_DIR}/include)     
 
