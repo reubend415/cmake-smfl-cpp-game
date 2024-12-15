@@ -15,12 +15,13 @@ FetchContent_MakeAvailable(SFML)
 
 # Add add_subdirectory
 add_subdirectory(src/player)
+add_subdirectory(src/game)
 
 
 add_executable(main src/main.cpp)
 
 
-target_link_libraries(main PRIVATE sfml-graphics player)
+target_link_libraries(main PRIVATE sfml-graphics player game)
 target_compile_features(main PRIVATE cxx_std_17)
 
 target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/src)
