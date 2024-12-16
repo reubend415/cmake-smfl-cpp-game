@@ -2,14 +2,15 @@
 #define GAME_H
 
 #include <SFML/Graphics.hpp>
+#include <string>
 #include "player/player.h"
+#include "item/item.h"
 
 
 class Game {
 private:
     Player* player;
-    sf::Texture itemTexture;
-    sf::Sprite itemSprite;
+    Item* apple;
 public:
     Game(sf::RenderWindow& window);
     ~Game() {

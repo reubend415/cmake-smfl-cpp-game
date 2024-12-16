@@ -20,6 +20,10 @@ void Player::handleKeyPress(sf::Keyboard::Scancode scancode) {
     }
 }
 
+sf::CircleShape Player::getSprite() {
+    return sprite;
+}
+
 void Player::handleKeyRelease(sf::Keyboard::Scancode scancode) {
     switch (scancode) {
         case sf::Keyboard::Scan::W:
@@ -76,3 +80,7 @@ void Player::draw(sf::RenderWindow& window) {
     window.draw(sprite);
 }
 
+void Player::collectApple() {
+    apples_held++;
+    std::cout << "Apples Held: " << apples_held << std::endl;
+}
