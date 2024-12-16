@@ -14,8 +14,8 @@ class Player {
     bool d_pressed = false;
 
 public:
-    Player(sf::RenderWindow& window) : sprite(sf::CircleShape(100)) {
-        sprite.setPosition(((window.getSize().x / 2) - 100), ((window.getSize().y / 2) - 100));
+    Player(sf::RenderWindow& window) : sprite(sf::CircleShape(50)) {
+        sprite.setPosition(((window.getSize().x / 2) - 50), ((window.getSize().y / 2) - 50));
         sprite.setFillColor(DEFAULT_COLOR);
     }
 

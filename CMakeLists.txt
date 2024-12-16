@@ -17,6 +17,11 @@ FetchContent_MakeAvailable(SFML)
 add_subdirectory(src/player)
 add_subdirectory(src/game)
 
+# Copy assets folder to the build directory
+add_custom_target(copy_assets ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/assets ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/assets
+)
 
 add_executable(main src/main.cpp)
 

@@ -8,10 +8,10 @@
 class Game {
 private:
     Player* player;
+    sf::Texture itemTexture;
+    sf::Sprite itemSprite;
 public:
-    Game(sf::RenderWindow& window) {
-        player = new Player(window);
-    };
+    Game(sf::RenderWindow& window);
     ~Game() {
         delete player;
     }
