@@ -26,7 +26,9 @@ void Game::run(sf::RenderWindow& window) {
     window.clear();
 
     
-    player->draw(window);
+    if (player->getRenderState()) {
+        window.draw(player->getSprite());
+    }
     if (apple->getRenderState()) {
         apple->handlePlayerCollect(*player);
         window.draw(apple->getSprite());
