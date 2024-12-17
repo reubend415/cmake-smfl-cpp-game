@@ -12,6 +12,11 @@ int main() {
     Game game(window);
 
     while (window.isOpen()) {
-        game.run(window);
+        if (game.isRunning()) {
+            game.run(window);
+        } else {
+            window.clear();
+            window.close();
+        }
     }
 }

@@ -6,6 +6,40 @@
 Game::Game(sf::RenderWindow& window) {
     player = new Player(window);
     apple = new Item("apple", window);
+    running = true;
+}
+
+void Game::run(sf::RenderWindow& window) {
+    for (auto event = sf::Event(); window.pollEvent(event);) {
+        if (event.type == sf::Event::Closed) {
+            window.close();
+        }
+
+        handleInput(window, event);
+    }
+
+    player->handlePlayerMove();
+    
+
+
+    // Clear, draw, display
+    window.clear();
+
+    
+    player->draw(window);
+    if (apple->getRenderState()) {
+        apple->handlePlayerCollect(*player);
+        window.draw(apple->getSprite());
+    }
+
+    if (enemy.getRenderState()) {
+        if (enemy.handleAttackPlayer(*player)) {
+            setRunning(false);
+        }
+        window.draw(enemy.getSprite());
+    }
+
+    window.display();
 }
 
 
@@ -39,31 +73,5 @@ void Game::handleInput(sf::RenderWindow& window, sf::Event event) {
                 break;
         }
     }
-}
-
-void Game::run(sf::RenderWindow& window) {
-    for (auto event = sf::Event(); window.pollEvent(event);) {
-        if (event.type == sf::Event::Closed) {
-            window.close();
-        }
-
-        handleInput(window, event);
-    }
-
-    player->handlePlayerMove();
-    
-
-
-    // Clear, draw, display
-    window.clear();
-
-    
-    player->draw(window);
-    if (apple->getRenderState()) {
-        apple->handlePlayerCollect(*player);
-        window.draw(apple->getSprite());
-    }
-
-    window.display();
 }
 

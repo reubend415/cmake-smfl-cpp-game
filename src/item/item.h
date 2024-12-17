@@ -15,9 +15,9 @@ private:
 public: 
     Item(string type, sf::RenderWindow& window);
     ~Item();
-    string getType() { return type; };
-    sf::Sprite getSprite() { return sprite; };
-    bool getRenderState() { return do_render; };
+    string getType() { return type; }
+    sf::Sprite getSprite() { return sprite; }
+    bool getRenderState() { return do_render; }
     void handlePlayerCollect(Player player);
 };
 
