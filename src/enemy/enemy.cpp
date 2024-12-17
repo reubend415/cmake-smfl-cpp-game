@@ -2,6 +2,8 @@
 #include <iostream>
 
 Enemy::Enemy() {
+    do_render = true;
+    type = "enemy";
     if (!texture.loadFromFile("assets/textures/Skull.png")) {
         std::cout << "Error loading enemy texture!" << std::endl;
     }
@@ -16,6 +18,4 @@ bool Enemy::handleAttackPlayer(Player player) {
     }
     return false;
 }
-
-// Hello
 

@@ -2,10 +2,11 @@
 #define PLAYER_H
 
 #include <SFML/Graphics.hpp>
+#include "utils/gameobject.h"
 #include <iostream>
 
 
-class Player {
+class Player : public GameObject {
     const int PLAYER_SPEED = 3;
     const sf::Color DEFAULT_COLOR = sf::Color(80, 0, 0);
     int apples_held;

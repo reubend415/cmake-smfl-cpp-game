@@ -4,21 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "player/player.h"
+#include "utils/gameobject.h"
 
 using std::string;
 
-class Enemy {
+class Enemy : public GameObject {
 private:
-    sf::Texture texture;
-    sf::Sprite sprite;
-    string type = "enemy";
-    bool do_render = true;
 public:
     Enemy();
-    // ~Enemy();
-    bool getRenderState() { return do_render; }
-    sf::Sprite getSprite() { return sprite; }
-    string getType() { return type; }
     bool handleAttackPlayer(Player player);
     // void handlePlayerAttack(Player player);
 };

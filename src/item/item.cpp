@@ -1,7 +1,9 @@
 #include "item.h"
 #include <iostream>
 
-Item::Item(string type, sf::RenderWindow& window): type(type){
+Item::Item(string type, sf::RenderWindow& window) {
+    this->type = type;
+    do_render = true;
     if (type == "apple") {
         if(!texture.loadFromFile("assets/textures/Apple.png")) {
             std::cout << "Error loading item texture!" << std::endl;

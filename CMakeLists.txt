@@ -18,6 +18,7 @@ add_subdirectory(src/player)
 add_subdirectory(src/game)
 add_subdirectory(src/item)
 add_subdirectory(src/enemy)
+add_subdirectory(src/utils)
 
 
 # Copy assets folder to the build directory
@@ -29,7 +30,7 @@ add_custom_target(copy_assets ALL
 add_executable(main src/main.cpp)
 
 
-target_link_libraries(main PRIVATE sfml-graphics player game item enemy)
+target_link_libraries(main PRIVATE sfml-graphics utils player game item enemy)
 target_compile_features(main PRIVATE cxx_std_17)
 
 target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/src)
